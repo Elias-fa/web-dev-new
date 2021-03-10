@@ -39,6 +39,14 @@ img {
   font-size: .9em;
 }
 
+
+@media (min-width: 60rem) {
+  .title {
+    font-size: 3.7rem;
+  }
+}
+
+
 /* buttons */
 
 .button {
@@ -52,6 +60,22 @@ img {
   background-color: black;
 }
 
+.button-accent {
+  color: #00ff6c;
+  border-color: #00ff6c;
+}
+
+.button-accent:hover,
+.button-accent:focus {
+  background: #00ff6c;
+  color: #232323;
+}
+
+@media (min-width: 60rem) {
+  .button {
+    font-size: 1.5rem;
+  }
+}
 
 /*header*/
 
@@ -59,8 +83,13 @@ header {
   position: absolute;
   left: 0;
   right: 0;
-  margin-top: 1em;
+  margin: 1em;
 }
+
+/*.backdrop {
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(10px);
+} */
 
 nav ul {
   margin: 0;
@@ -80,12 +109,27 @@ nav a {
   font-size: .8rem;
   padding: .5em;
   /*color: #FFFFFF;*/
-  border-radius: 5px 20pc 5px;
+  /*transition: all 0.3s cubic-bezier(.25,.8,.25,1);*/
+  transition: 0.5s;
+  /*border-radius: 5px 20pc 5px;*/
+  /*background-image: linear-gradient(to right, dimgray 0%, grey 51%)*/
+  background-color: black;
+  color: #00ff6c;
+  border: 1px solid #00ff6c;
 }
 
 nav a:hover,
 nav a:focus {
-  color:#1F073A;
+  color: blue;
+}
+
+@media (min-width: 60rem) {
+  .logo{
+    float: left;
+  }
+  nav {
+    float: right;
+  }
 }
 
 
@@ -94,4 +138,14 @@ nav a:focus {
 .home-hero {
   background-image: url(../imgs/heroimage2.jpg);
   padding: 10em 0;
+  background-size: cover;
+  background-position: center;
+  color: #FFF;
+}
+
+@media (min-width: 60rem) {
+  .home-hero {
+    height: 100vh;
+    padding-top: 35vh;
+  }
 }
