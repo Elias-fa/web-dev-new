@@ -17,7 +17,9 @@ img {
 
 .container {
   width: 95%;
+  max-width: 70em;
   margin: 0 auto;
+
   /*background-color: rgba(255, 255, 255, .15);
   backdrop-filter: blur(10px);
   padding-bottom: 0;*/
@@ -30,6 +32,15 @@ h1 {
   font-weight: 300;
   font-size: 2.0rem;
   margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
 }
 
 .title {
@@ -48,6 +59,12 @@ h1 {
 
 
 @media (min-width: 60rem) {
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
   .title {
     font-size: 3.7rem;
   }
@@ -67,6 +84,17 @@ h1 {
   background-color: #232323;
 }
 
+@media (min-width: 60rem) {
+  .button {
+    font-size: 1.5rem;
+  }
+}
+
+.button-small {
+  font-size: .7rem;
+  font-weight: 700;
+}
+
 .button-accent {
   color: #00ff6c;
   border-color: #00ff6c;
@@ -78,11 +106,7 @@ h1 {
   color: #232323;
 }
 
-@media (min-width: 60rem) {
-  .button {
-    font-size: 1.5rem;
-  }
-}
+
 
 /*header*/
 
@@ -143,7 +167,7 @@ nav a:focus {
 /*home-hero*/
 
 .home-hero {
-  background-image: url(../imgs/heroimage2.jpg);
+  background-image: url(../imgs/circle3.jpg);
   padding: 10em 0;
   background-size: cover;
   background-position: center;
@@ -200,16 +224,56 @@ nav a:focus {
   }
 
   .home-about {
-    background-image: url(../imgs/portfolio-05.jpg);
+    background-image: url(../imgs/homehero9.jpg);
+    background-repeat: no-repeat;
+    padding-bottom: 10em;
   }
 
   .home-about-textbox {
-    width: 40%;
+    width: 50%;
+    padding: 7em;
+    outline-offset: -3.75em;
     margin-left: -2.5%;
+    top: -5em;
+    text-align: left;
+    box-shadow: 0 0 4em 0 rgba(0,0,0,.3);
   }
 
   .home-about-textbox h1 {
-    top: .3em;
-    padding: 0 .6em;
+    top: .75em;
+    left: 6rem;
+    transform: translateX(0);
   }
+}
+
+
+/* PORTFOLIO */
+
+.portfolio {
+  margin: 3em 0;
+}
+
+.port-item {
+  margin: 0;
+  position: relative;
+}
+
+.port-item img {
+  display: block;
+}
+
+.port-desc {
+  position: absolute;
+  z-index: 100;
+  bottom: 2em;
+  left: 3em;
+  right: 3em;
+  color: white;
+  background: rgba(0,0,0,.75);
+  paddding-bottom: 1em;
+  padding-top: 0;
+}
+
+.port-desc p {
+  margin: 1em;
 }
