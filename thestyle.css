@@ -2,6 +2,7 @@
 
 *{
   box-sizing: border-box;
+  transition: all ease-in-out 250ms;
 }
 
 body {
@@ -24,6 +25,61 @@ img {
   backdrop-filter: blur(10px);
   padding-bottom: 0;*/
 }
+
+.clearfix::after, /*maybe use later*/
+section::after,
+footer::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* COLUMN SYSTEM */
+
+[class^=col-] {     /*any class starts with "col-" will get these attributes. [] are attribute selector*/
+  width: 100%;
+  margin-top: 1em;
+}
+
+[class^=col-]:first-child {
+  margin-top: 0;
+}
+
+
+.col-1 {
+  width: 33.333334%;
+  float: left;
+}
+
+
+
+@media (min-width: 40rem) {
+
+  [class^=col-] {
+    float: left;
+    padding: 0 .5em;
+    margin-top: 0;
+  }
+
+  [class^=col-]:first-child {
+    padding-left: 0;
+  }
+
+  [class^=col-]:last-child {
+    padding-right: 0;
+  }
+
+  .col-3 {
+    width: 50%;
+  }
+
+  .col-1 {
+    width: 16.6666%;
+  }
+
+}
+
 
 
 /* typography */
@@ -55,6 +111,17 @@ p:last-of-type {
   font-weight: 300;
   display: block;
   font-size: .9em;
+}
+
+
+.title-cta {
+  margin: 0 0 .5em;
+}
+
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 
@@ -102,6 +169,18 @@ p:last-of-type {
 
 .button-accent:hover,
 .button-accent:focus {
+  background: #00ff6c;
+  color: #232323;
+}
+
+
+.button-dark {
+  color: #00ff6c;
+  border-color: #232323;
+}
+
+.button-dark:hover,
+.button-dark:focus {
   background: #00ff6c;
   color: #232323;
 }
@@ -250,30 +329,72 @@ nav a:focus {
 /* PORTFOLIO */
 
 .portfolio {
-  margin: 3em 0;
+  margin: 3em 0 0;
 }
 
 .port-item {
-  margin: 0;
+  margin: 0em;
   position: relative;
 }
 
 .port-item img {
   display: block;
+  width: 100%;
 }
 
 .port-desc {
   position: absolute;
   z-index: 100;
-  bottom: 2em;
-  left: 3em;
-  right: 3em;
+  bottom: 0em;
+  left: 0em;
+  right: 0em;
   color: white;
-  background: rgba(0,0,0,.75);
-  paddding-bottom: 1em;
-  padding-top: 0;
+  background: rgba(0,0,0,.6);
+  padding-bottom: 2em;
 }
 
 .port-desc p {
   margin: 1em;
+}
+
+
+@media (min-width: 37rem) {
+  .port-item {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media (min-width: 60rem) {
+  .port-item {
+    width: 33.3333334%;
+    overflow: hidden;
+  }
+
+  .port-desc {
+    transform: translateY(150%);
+  }
+
+  .port-item:hover .port-desc {
+    transform: translateY(0%);
+  }
+}
+
+
+/* CTA class */
+
+.cta {
+  background-color: #00ff6c;
+  padding: 6em 0;
+}
+
+
+
+/* FOOTER */
+
+footer {
+  background: #232323;
+  color: #FFF;
+  text-align: left;
+  padding: 5em 0;
 }
